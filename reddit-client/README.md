@@ -1,6 +1,6 @@
 # Reddit-App
 
-Reddit-App is a React project that allows users to browse and search Reddit posts. It uses the Reddit API to fetch data and displays posts in a clean, responsive interface. Features include search by subreddit or keyword, post previews, and author details.
+The Reddit App is a React project that allows users to browse and search through Reddit posts. It uses the Reddit API to fetch data and displays posts in a clean, responsive interface. Features include search by subreddit or keyword, post previews, and author details.
 
 ---
 
