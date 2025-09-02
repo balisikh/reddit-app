@@ -1,12 +1,26 @@
+/* ======================================= */
+/* 1. Global & Base Styles               */
+/* ======================================= */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
-    background-color: #F0F0F0; /* Soft, neutral gray */
+    background-color: #F0F0F0; /* Background: Soft, neutral gray */
+    color: #333; /* Default text color */
+    line-height: 1.6;
 }
 
+.container {
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+/* ======================================= */
+/* 2. Header Styles                      */
+/* ======================================= */
 .header {
     background-color: #E03E00; /* Dark Reddit-orange accent */
-    color: white; /* Text color remains white for contrast */
+    color: white;
     padding: 15px 0;
 }
 
@@ -23,20 +37,17 @@ body {
     color: white;
     text-decoration: none;
     margin-left: 20px;
+    transition: color 0.2s ease-in-out;
 }
 
-/* Hover / Focus accents */
 .auth-links a:hover,
 .auth-links a:focus {
-    color: #FF704D; /* Light orange highlight */
+    color: #FF704D; /* Light orange highlight for interaction */
 }
 
-.container {
-    max-width: 900px;
-    margin: 20px auto;
-    padding: 0 20px;
-}
-
+/* ======================================= */
+/* 3. Search Section Styles              */
+/* ======================================= */
 .search-section {
     display: flex;
     gap: 10px;
@@ -46,19 +57,19 @@ body {
 .search-input {
     flex-grow: 1;
     padding: 10px;
-    border: 1px solid #A0A0A0; /* Medium gray for placeholder lines */
+    border: 1px solid #A0A0A0; /* Medium gray */
     border-radius: 5px;
-    color: #333; /* A general dark text color */
+    color: #333;
+    transition: border-color 0.2s ease-in-out;
 }
 
 .search-input::placeholder {
     color: #A0A0A0; /* Medium gray for placeholder text */
 }
 
-/* Hover / Focus accents */
 .search-input:focus {
     border-color: #FF704D; /* Light orange highlight on focus */
-    outline: none; /* Remove default outline */
+    outline: none;
 }
 
 .search-button {
@@ -68,38 +79,99 @@ body {
     color: white;
     border-radius: 5px;
     cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
 }
 
-/* Hover / Focus accents */
 .search-button:hover,
 .search-button:focus {
-    background-color: #FF704D; /* Light orange highlight */
+    background-color: #FF704D; /* Light orange highlight on hover/focus */
 }
 
+/* ======================================= */
+/* 4. Post Card Styles                   */
+/* ======================================= */
 .posts-container {
     display: grid;
     gap: 15px;
 }
 
 .post-card {
-    background-color: #F8F8F8; /* Slightly darker than pure white, still crisp */
+    background-color: #F8F8F8; /* Post Card: Slightly darker than pure white */
     padding: 20px;
     border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); /* Soften shadow to match new palette */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
 .post-card h2 {
     margin-top: 0;
     font-size: 1.2em;
-    color: #333; /* General dark text color for headings */
+    color: #333;
 }
 
 .post-card p {
-    color: #555; /* Slightly lighter text for body paragraphs */
+    color: #555;
+    margin-bottom: 0;
 }
 
 .post-card .author {
-    color: #A0A0A0; /* Medium gray for hierarchy, as per notes */
+    color: #A0A0A0; /* Text: Medium gray for hierarchy */
     font-size: 0.9em;
     margin-top: 10px;
+}
+
+/* ======================================= */
+/* 5. Media Queries for Responsiveness   */
+/* ======================================= */
+
+/* For tablets and small desktops (up to 768px) */
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px 20px;
+    }
+
+    .header-container h1 {
+        margin-bottom: 5px;
+    }
+
+    .auth-links {
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+        margin-top: -35px; /* Adjusts position to prevent large gap */
+        font-size: 0.9em;
+    }
+
+    .search-section {
+        flex-direction: column;
+        gap: 5px;
+    }
+    
+    .search-button {
+        width: 100%; /* Full-width button on smaller screens */
+    }
+    
+    .container {
+        padding: 0 15px;
+    }
+}
+
+/* For mobile phones (up to 480px) */
+@media (max-width: 480px) {
+    .header h1 {
+        font-size: 1.5em;
+    }
+    
+    .auth-links a {
+        margin-left: 10px;
+    }
+
+    .search-input, .search-button {
+        font-size: 1em;
+    }
+    
+    .post-card {
+        padding: 15px;
+    }
 }
