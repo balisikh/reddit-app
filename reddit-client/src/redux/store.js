@@ -1,9 +1,22 @@
-// src/redux/store.js
-import { configureStore } from "@reduxjs/toolkit";
-import postReducer from "./postSlice";
+import { createSlice } from "@reduxjs/toolkit";
 
-export const store = configureStore({
-  reducer: {
-    posts: postReducer
+const initialState = {
+  posts: [],
+  searchTerm: "",
+  filterCategory: "all",
+  selectedPost: null
+};
+
+const postSlice = createSlice({
+  name: "posts",
+  initialState,
+  reducers: {
+    setPosts: (state, action) => { state.posts = action.payload; },
+    setSearchTerm: (state, action) => { state.searchTerm = action.payload; },
+    setFilterCategory: (state, action) => { state.filterCategory = action.payload; },
+    selectPost: (state, action) => { state.selectedPost = action.payload; },
   }
 });
+
+export const { setPosts, setSearchTerm, setFilterCategory, selectPost } = postSlice.actions;
+export default postSlice.reducer;
