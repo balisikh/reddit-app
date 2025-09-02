@@ -1,12 +1,12 @@
 body {
     font-family: Arial, sans-serif;
     margin: 0;
-    background-color: #f0f2f5; /* Light gray background */
+    background-color: #F0F0F0; /* Soft, neutral gray */
 }
 
 .header {
-    background-color: #ff4500; /* Reddit orange */
-    color: white;
+    background-color: #E03E00; /* Dark Reddit-orange accent */
+    color: white; /* Text color remains white for contrast */
     padding: 15px 0;
 }
 
@@ -25,6 +25,12 @@ body {
     margin-left: 20px;
 }
 
+/* Hover / Focus accents */
+.auth-links a:hover,
+.auth-links a:focus {
+    color: #FF704D; /* Light orange highlight */
+}
+
 .container {
     max-width: 900px;
     margin: 20px auto;
@@ -38,19 +44,36 @@ body {
 }
 
 .search-input {
-    flex-grow: 1; /* Makes input fill available space */
+    flex-grow: 1;
     padding: 10px;
-    border: 1px solid #ccc;
+    border: 1px solid #A0A0A0; /* Medium gray for placeholder lines */
     border-radius: 5px;
+    color: #333; /* A general dark text color */
+}
+
+.search-input::placeholder {
+    color: #A0A0A0; /* Medium gray for placeholder text */
+}
+
+/* Hover / Focus accents */
+.search-input:focus {
+    border-color: #FF704D; /* Light orange highlight on focus */
+    outline: none; /* Remove default outline */
 }
 
 .search-button {
     padding: 10px 20px;
     border: none;
-    background-color: #0079d3; /* A common Reddit blue */
+    background-color: #E03E00; /* Dark Reddit-orange accent */
     color: white;
     border-radius: 5px;
     cursor: pointer;
+}
+
+/* Hover / Focus accents */
+.search-button:hover,
+.search-button:focus {
+    background-color: #FF704D; /* Light orange highlight */
 }
 
 .posts-container {
@@ -59,19 +82,24 @@ body {
 }
 
 .post-card {
-    background-color: white;
+    background-color: #F8F8F8; /* Slightly darker than pure white, still crisp */
     padding: 20px;
     border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); /* Soften shadow to match new palette */
 }
 
 .post-card h2 {
     margin-top: 0;
     font-size: 1.2em;
+    color: #333; /* General dark text color for headings */
+}
+
+.post-card p {
+    color: #555; /* Slightly lighter text for body paragraphs */
 }
 
 .post-card .author {
-    color: #555;
+    color: #A0A0A0; /* Medium gray for hierarchy, as per notes */
     font-size: 0.9em;
     margin-top: 10px;
 }
